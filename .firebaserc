@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "efup-334c4": {
+      "hosting": {
+        "efup-angular": [
+          "efup-334c4"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "efup-angular",
+      "public": "dist/efup-angular",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
