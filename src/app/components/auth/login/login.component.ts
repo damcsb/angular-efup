@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+
+  constructor(private fbAuth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onLogin() {
+      this.fbAuth.loginEmailUser(this.email, this.password).then( () => {
+        this.router.navigate(['/home']);
+      }).catch(() =>
+      console.log("Log Error")
+      )}
 }

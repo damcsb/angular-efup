@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="container">
+    <div class="secondary">
+    <p class="log-title">Login</p>
+    
+    <input class="email-input" placeholder="Write your email" [(ngModel)]="email" /><br>
+    <input class="password-input" placeholder="Write your password" type="password" [(ngModel)]="password" /><br>
+
+    <button class="login-button" (click)="onLogin()">Log in</button>
+    </div>
+</div>
