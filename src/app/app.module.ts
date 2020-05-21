@@ -8,13 +8,16 @@ import { FormsModule } from '@angular/forms';
 //
 import { environment } from '../environments/environment';
 //
-//
+//FIREBASE
 import { AngularFireModule } from '@angular/fire';
+//
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 //
-import { AuthService } from './service/authentication.service'
+import { AuthService } from './service/authentication.service';
+import { StudentService } from './service/student.service';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { AuthService } from './service/authentication.service'
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

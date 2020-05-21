@@ -14,7 +14,10 @@ export class LoginComponent implements OnInit {
 
   constructor(private fbAuth: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if(localStorage.getItem("token") != null){
+      this.router.navigate(['/home'])
+    }
   }
 
   onLogin() {
