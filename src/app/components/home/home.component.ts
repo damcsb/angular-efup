@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AngularFireDatabase } from '@angular/fire/database'
 
 import { AuthService } from '../../service/authentication.service';
 import {StudentService} from '../../service/student.service';
+
 import { Student } from 'src/app/models/student';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +15,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+
   studentlist: Student[];
 
-  constructor(private studentService: StudentService, private auth:AuthService, private router:Router) { }
+  constructor(private studentService: StudentService, private auth:AuthService, private router:Router, private mDatabase: AngularFireDatabase) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -23,4 +27,10 @@ export class HomeComponent implements OnInit {
     }});
   }
 
+  logout(){
+    this.auth.logout();
+    setTimeout(()=>{
+      this.router.navigate(['/login']);
+    })
+  }
 }

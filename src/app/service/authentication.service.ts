@@ -27,6 +27,7 @@ export class AuthService {
   //
   logout(){
     return this.fbAuth.signOut().then(()=>{
+      localStorage.removeItem("token");
     });
   }
   //

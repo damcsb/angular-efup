@@ -1,10 +1,13 @@
 <div class="container">
-    <div class="secondary">
-    <p class="log-title">Login</p>
-    
-    <input class="email-input" placeholder="Write your email" [(ngModel)]="email" /><br>
-    <input class="password-input" placeholder="Write your password" type="password" [(ngModel)]="password" /><br>
-
-    <button class="login-button" (click)="onLogin()">Log in</button>
-    </div>
+        <h3 class="log-title">Login</h3>
+        <div class="input-field">
+            <input id="email-input" [(ngModel)]="email" required />
+            <label for="email-input">Your email: </label>
+        </div><br>
+        <div class="input-field">
+            <input id="password-input" type="password" [(ngModel)]="password"  required/>
+            <label for="password-input">Your password: </label>
+        </div>
+        <br>
+        <button type="button" class="btn-login" (click)="onLogin()">Log in</button>
 </div>
