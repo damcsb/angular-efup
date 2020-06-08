@@ -16,15 +16,14 @@ export class LoginComponent implements OnInit {
   constructor(private fbAuth: AuthService, private router: Router) { }
 
   ngOnInit() {
-    if(localStorage.getItem("token") != null){
-      this.router.navigate(['/home'])
-    }
   }
 
   onLogin() {
       this.fbAuth.loginEmailUser(this.email, this.password).then( () => {
-        this.router.navigate(['/home']);
+        console.log("logging...")
       }).catch(() =>
       console.log("Log Error")
-      )}
+      )
+      setTimeout(()=>{ this.router.navigate(['/home']);}, 2500)
+    }
 }

@@ -1,13 +1,16 @@
-<div class="container">
+<div class="background">
+    <div class="container">
         <h3 class="log-title">Login</h3>
+        <img src="https://i.imgur.com/RBjq9VP.png">
         <div class="input-field">
             <input id="email-input" [(ngModel)]="email" required />
             <label for="email-input">Your email: </label>
         </div><br>
         <div class="input-field">
-            <input id="password-input" type="password" [(ngModel)]="password"  required/>
+            <input id="password-input" type="password" [(ngModel)]="password" required />
             <label for="password-input">Your password: </label>
         </div>
         <br>
         <button type="button" class="btn-login" (click)="onLogin()">Log in</button>
+    </div>
 </div>
