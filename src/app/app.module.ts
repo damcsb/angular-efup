@@ -12,18 +12,15 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 //
 import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 //
 import { AuthService } from './service/authentication.service';
-import { StudentService } from './service/student.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
     HomeComponent
   ],
   imports: [
@@ -32,7 +29,7 @@ import { StudentService } from './service/student.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule
   ],
-  providers: [AuthService, StudentService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

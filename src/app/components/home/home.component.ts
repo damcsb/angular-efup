@@ -1,11 +1,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 
 import { AuthService } from '../../service/authentication.service';
 
 import { Observable } from 'rxjs';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,16 @@ export class HomeComponent implements AfterViewInit {
   items: Observable<any[]>;
   token:any;
 
+
   constructor( private auth:AuthService, private router:Router, private db: AngularFireDatabase) { 
-    this.items = db.list('Users').valueChanges();
+    this.items = db.list('Student').valueChanges();
+  
+  }
+
+  changeAsist(){
+    /*this.items.forEach(student => {
+      console.log(student);
+    });*/
   }
 
   ngAfterViewInit() {
@@ -26,12 +35,11 @@ export class HomeComponent implements AfterViewInit {
         this.router.navigate(['/login']);
       }
 
-  }
-
-  logout(){
-    this.auth.logout().then( () => {
+    }
+    logout(){
+      this.auth.logout().then(()=>{
+        localStorage.removeItem("token");
+      });
       this.router.navigate(['/login']);
-      console.log("hola");
-    })
-  }
+    }
 }

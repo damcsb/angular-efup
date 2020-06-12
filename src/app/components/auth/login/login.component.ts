@@ -24,6 +24,6 @@ export class LoginComponent implements OnInit {
       }).catch(() =>
       console.log("Log Error")
       )
-      setTimeout(()=>{ this.router.navigate(['/home']);}, 2500)
+      setTimeout(()=>{ this.router.navigate(['/home']);}, 3000)
     }
 }

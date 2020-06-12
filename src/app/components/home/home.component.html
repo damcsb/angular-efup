@@ -1,6 +1,13 @@
+<div class="background">
+  <div class="container">
 <ul>
-    <li *ngFor="let item of items | async">
-       {{ item | json }}
-    </li>
-  </ul>
-<button (click)="logout()">Log Out</button>
+  <li *ngFor="let item of items | async">
+     {{ item.name }}, {{item.firstsurname}}, {{item.secondsurname}}:
+     <button class="btnstd" (click)="changeAsist()">Asistencia: {{item.asist}}</button>
+     <button class="btnstd">Fruta: {{item.fruit}}</button>
+     <button class="btnstd">Chandal: {{item.chandal}}</button>
+  </li>
+</ul>
+<button style="background-color: #4CAF50; color: #FFFFFF; margin-bottom: 10px;" (click)="logout()">Log out</button>
+</div>
+</div>
